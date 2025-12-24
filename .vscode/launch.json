@@ -5,29 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "args": [
-                "-u",
-                "tdd",
-                "--timeout",
-                "999999",
-                "--colors",
-                "${workspaceFolder}/test"
-            ],
-            "internalConsoleOptions": "openOnSessionStart",
-            "name": "Mocha Tests",
-            "program": "mocha",
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "node"
-        },
-        {
             "type": "LuaHelper-Debug",
             "request": "launch",
             "name": "LuaHelper-Attach",
             "description": "通用模式,通常调试项目请选择此模式",
-            "cwd": "",
+            "cwd": "${workspaceFolder}",
             "luaFileExtension": "",
             "connectionPort": 8818,
             "stopOnEntry": true,
@@ -35,11 +17,16 @@
             "autoPathMode": true
         },
         {
-            "type": "chrome",
+            "type": "LuaHelper-Debug",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "name": "LuaHelper-DebugFile",
+            "description": "独立文件调试模式",
+            "luaPath": "",
+            "packagePath": [],
+            "luaFileExtension": "",
+            "connectionPort": 8818,
+            "stopOnEntry": true,
+            "useCHook": true
         }
     ]
 }
